@@ -23,26 +23,15 @@ export default function Home() {
         </p> */}
 
         <div className={styles.grid}>
-          <a href="/game" className={styles.card}>
-            <h2>Go to the game &rarr;</h2>
+          <div className={styles.card}>
+            <Link href="/game"><h2 type="button">Go to the game &rarr;</h2></Link>
             <p>Rock, Paper, Scissors game!</p>
-          </a>
+          </div>
 
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+
     </div>
   )
 }
