@@ -58,3 +58,25 @@ a {
   background: radial-gradient(circle, rgb(129, 140, 196) 0%, rgb(81, 70, 60) 100%);
   box-shadow: 0 0 0 10px rgb(255, 255, 255);
 }
+
+.result {
+  color: black;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 130px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.win {
+  background: greenyellow;
+}
+
+.lose {
+  background: red;
+}
+
+.draw {
+  background: white;
+}
