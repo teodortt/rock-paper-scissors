@@ -79,14 +79,19 @@ const Game = () => {
                 <div>
                     <button className="result-circle"><p style={{ fontSize: 10, fontWeight: 600 }}>My choice:</p>{choice}</button>
 
-                    {time > 0 ? <>Countdown:{time}</> :
-                        <>
+                    {/* {time > 0 ? <>Countdown:{time}</> : */}
+                        {/* <> */}
                             {/* <p>Computer choice:</p> */}
-                            {computer && <button className="result-circle"><p style={{ fontSize: 10, fontWeight: 600 }}>Computer choice:</p>{computer}</button>}
+                            <button className="result-circle">
+                                <p style={{ fontSize: 10, fontWeight: 600 }}>Computer choice:</p>
+                                {time > 0 ? <>Countdown:{time}</> :
+                                            <>{computer}</>
+                                }  
+                            </button>
                             <p>Game Result:</p>
                             {game !== "" && <div className={`result ${game === 'win' ? 'win' : 'lose'}`}>{game}</div>}
                             <p className="pt-5">{computer !== "" && 'Play again'}</p>
-                        </>}
+                        {/* </>} */}
 
                 </div>
 
