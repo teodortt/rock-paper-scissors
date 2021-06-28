@@ -1,7 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Fireworks } from 'fireworks/lib/react'
+
 
 const Game = () => {
+
+    let fxProps = {
+        count: 3,
+        interval: 200,
+        colors: ['#cc3333', '#4CAF50', '#81C784'],
+        calc: (props, i) => ({
+          ...props,
+          x: (i + 1) * (window.innerWidth / 3) - (i + 1) * 100,
+          y: 200 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0)
+        })
+      }
 
     const [choice, setChoice] = useState('');
     const [time, setTimer] = useState(0);
@@ -88,6 +101,8 @@ const Game = () => {
                             </button>
                             <p>Game Result:</p>
                             {game !== "" && <div className={`result ${game === 'win' ? 'win' : 'lose'}`}>{game}</div>}
+            
+                            {time === 0 && game === 'win' && <Fireworks {...fxProps} />}
                             <p className="pt-5">{computer !== "" && 'Play again'}</p>
 
                 </div>
